@@ -1,3 +1,25 @@
+# Fork Context
+
+This repository is a fork of the original project
+[ipazc/mtcnn](https://github.com/ipazc/mtcnn).
+
+This fork is used as part of the *"Facial Emotion Recognition"* task in the course **Softwareentwicklungspraktikum (WS 25/26)** at Ludwig-Maximilians-Universität Munich.
+
+The MTCNN architecture is used exclusively for **image preprocessing** and fulfills the following tasks:
+- Taking an image of a human as input
+- Detecting a single face
+- Cropping a centered 64x64 pixel image of the detected face
+- Normalizing and aligning the face using a similarity transformation and padding
+- Returning the normalized face crop with five facial landmark points (eyes, nose, mouth corners)
+
+The model is trained **from scratch** on the CelebA dataset.
+Therefore, no pretrained weights or biases are used or distributed in this fork.
+
+## Scope of Responsibility
+The focus of this fork is limited to data preprocessing.
+The core MTCNN is provided by the following original implementation:
+
+
 # MTCNN - Multitask Cascaded Convolutional Networks for Face Detection and Alignment
 
 [![PyPI version](https://badge.fury.io/py/mtcnn.svg)](https://badge.fury.io/py/mtcnn)
