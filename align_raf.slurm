@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 #SBATCH --job-name=raf_align
-#SBATCH --partition=Gobi
+#SBATCH --partition=NvidiaALL
 #SBATCH --gres=gpu:1
 #SBATCH --time=04:00:00
 #SBATCH --mem=16G
