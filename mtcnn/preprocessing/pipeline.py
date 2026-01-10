@@ -14,7 +14,7 @@ def preprocess(image, detector, do_padding = True, do_cropping = True, do_aligni
     faces = detector.detect_faces(image)
 
     if not faces:
-        raise RuntimeError("No face detected")
+        return None        #raise RuntimeError("No face detected")
 
     face = max(faces, key=lambda f: float(f["confidence"]))
 
@@ -50,11 +50,6 @@ def preprocess(image, detector, do_padding = True, do_cropping = True, do_aligni
         sample = align_face(sample)
         if debug:
             stages.append(("aligned", deepcopy(sample)))
-
-    #if do_resizing:
-    #    sample = resize_face(sample)
-    #    if debug:
-    #        stages.append(("resized", deepcopy(sample)))
 
     if debug:
         visualize(stages)        

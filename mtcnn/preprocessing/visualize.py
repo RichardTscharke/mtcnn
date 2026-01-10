@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
 
-def visualize(stages, show_box = True, show_landmarks = True):
+def visualize(stages, show_box = True, show_landmarks = True, fallback = False):
 
     n = len(stages)
 
@@ -14,8 +14,12 @@ def visualize(stages, show_box = True, show_landmarks = True):
 
     for ax, (stage, sample) in zip (axes, stages):
 
-        image = sample["image"]
-        bx, by, bw, bh = sample["box"]
+        if fallback:
+            image = sample
+
+        else:
+            image = sample["image"]
+            bx, by, bw, bh = sample["box"]
 
         ax.imshow(image)
         ax.set_title(stage)

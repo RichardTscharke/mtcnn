@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-def align_face(sample, output_size = 64, target_left = (18, 24), target_right = (44, 24)):
+def align_face(sample, output_size = 64, target_left = (18, 16), target_right = (44, 16)):
 
     image = sample["image"]
     keypoints = sample["keypoints"]
