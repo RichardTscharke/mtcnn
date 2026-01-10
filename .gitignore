@@ -1,4 +1,8 @@
+logs/
+*.out
+*.err
 preprocess.log
+
 
 # Ignore the /debug folder and all its contents
 /debug/

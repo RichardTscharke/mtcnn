@@ -6,6 +6,10 @@ from mtcnn import MTCNN
 from mtcnn.preprocessing import preprocess
 from mtcnn.preprocessing.fallback import fallback
 
+import tensorflow as tf
+print("GPUs:", tf.config.list_physical_devices("GPU"))
+
+
 INPUT_DIR = Path("/home/t/tscharke/work/data/RAF/original")
 OUTPUT_DIR = Path("/home/t/tscharke/work/data/RAF/aligned")
 LOG_FILE = OUTPUT_DIR / "preprocess.log"
