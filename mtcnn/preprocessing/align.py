@@ -27,8 +27,6 @@ def align_face(sample, output_size = 64, target_left = (18, 16), target_right = 
     M[0,2] += target_center[0] - current_center[0]
     M[1,2] += target_center[1] - current_center[1]
 
-    h, w = image.shape[:2]
-
     sample["image"] = cv2.warpAffine(image, M, (output_size, output_size), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
 
     alignedKP = {}

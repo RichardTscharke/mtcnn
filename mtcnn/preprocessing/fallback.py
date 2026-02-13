@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 from copy import deepcopy
 from .visualize import visualize
-from mtcnn.preprocessing import preprocess
 
 def fallback(image, out_size = 64, debug = False):
 

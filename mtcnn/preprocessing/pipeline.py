@@ -2,7 +2,6 @@ import numpy as np
 from .padding import apply_padding
 from .crop import crop_face
 from .align import align_face
-from .resize import resize_face
 from copy import deepcopy
 from .visualize import visualize
 
@@ -14,7 +13,7 @@ def preprocess(image, detector, do_padding = True, do_cropping = True, do_aligni
     faces = detector.detect_faces(image)
 
     if not faces:
-        return None        #raise RuntimeError("No face detected")
+        return None 
 
     face = max(faces, key=lambda f: float(f["confidence"]))
 
@@ -39,7 +38,7 @@ def preprocess(image, detector, do_padding = True, do_cropping = True, do_aligni
     if do_padding:
         sample = apply_padding(sample)
         if debug:
-            stages.append(("padded", deepcopy(sample)))
+            stages.append(("clipped", deepcopy(sample)))
 
     if do_cropping:
         sample = crop_face(sample)
